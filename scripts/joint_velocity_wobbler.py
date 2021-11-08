@@ -30,6 +30,7 @@
 import argparse
 import math
 import random
+import numpy as np
 
 import rospy
 
@@ -56,7 +57,7 @@ class Wobbler(object):
         self._right_joint_names = self._right_arm.joint_names()
 
         # control parameters
-        self._rate = 500.0  # Hz
+        self._rate = np.ushort(500.0)  # Hz
 
         print("Getting robot state... ")
         self._rs = baxter_interface.RobotEnable(CHECK_VERSION)
